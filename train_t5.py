@@ -32,7 +32,7 @@ def load_dataset(input_path, output_path):
         inputs = f.readlines()
     with open(output_path, "r", encoding="utf-8") as f:
         outputs = f.readlines()
-    assert len(inputs) == len(outputs), "❌ Input/Output no coinciden en longitud"
+    assert len(inputs) == len(outputs), "Input/Output no coinciden en longitud"
     return Dataset.from_dict({"input": [i.strip() for i in inputs], "output": [o.strip() for o in outputs]})
 
 raw_dataset = load_dataset(train_input_path, train_output_path)
@@ -73,7 +73,7 @@ trainer.train()
 # Guardado final
 model.save_pretrained(output_dir)
 tokenizer.save_pretrained(output_dir)
-print(f"✅ Entrenamiento finalizado. Modelo guardado en: {output_dir}")
+print(f"Entrenamiento finalizado. Modelo guardado en: {output_dir}")
 
 """# 1a validación"""
 
@@ -152,7 +152,7 @@ def load_dataset(input_path, output_path):
         inputs = f.readlines()
     with open(output_path, "r", encoding="utf-8") as f:
         outputs = f.readlines()
-    assert len(inputs) == len(outputs), "⚠️ Los archivos no tienen la misma cantidad de líneas"
+    assert len(inputs) == len(outputs), "⚠Los archivos no tienen la misma cantidad de líneas"
     return Dataset.from_dict({"input": [i.strip() for i in inputs], "output": [o.strip() for o in outputs]})
 
 # Tokenización con longitudes optimizadas
@@ -196,7 +196,7 @@ trainer.train()
 model.save_pretrained(output_dir)
 tokenizer.save_pretrained(output_dir)
 
-print(f"✅ Reentrenamiento completado. Modelo guardado en:\n{output_dir}")
+print(f"Reentrenamiento completado. Modelo guardado en:\n{output_dir}")
 
 """# 2a validación"""
 
@@ -323,7 +323,7 @@ trainer.train()
 model.save_pretrained(output_dir)
 tokenizer.save_pretrained(output_dir)
 
-print(f"✅ Entrenamiento FINAL completado. Modelo v3 guardado en:\n{output_dir}")
+print(f"Entrenamiento FINAL completado. Modelo v3 guardado en:\n{output_dir}")
 
 pip install rouge_score
 
